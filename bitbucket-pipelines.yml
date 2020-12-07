@@ -1,0 +1,11 @@
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Docker build for Progress DevOps course
+          image:
+            name: ubuntu  # use a container with ubuntu as an execution environment for our builds        
+          script:
+            - ci_scripts/docker-build.sh
+          services:
+            - docker
