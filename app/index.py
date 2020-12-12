@@ -12,7 +12,7 @@ def hello():
 def write_redis():
     counter = int(client.get('counter') or 0) + 1
     client.set('counter', counter)
-    return f'[{getenv('CUSTOM_GREETING')}] counter updated to {counter}'
+    return f"[{getenv('CUSTOM_GREETING')}] counter updated to {counter}"
     
 @app.route('/test_redis_read')
 def read_redis():
